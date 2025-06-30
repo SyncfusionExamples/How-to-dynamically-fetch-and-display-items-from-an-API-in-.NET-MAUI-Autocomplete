@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:filter="clr-namespace:AutocompleteSample.CustomFilter"
+             xmlns:vm="clr-namespace:AutocompleteSample.ViewModel"
+             xmlns:editors="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
+             xmlns:inputlayout="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
+             x:Class="AutocompleteSample.MainPage">
+
+    <ContentPage.BindingContext>
+        <vm:CustomerViewModel/>
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <inputlayout:SfTextInputLayout ContainerType="Outlined"
+                                           ShowHint="False"
+                                           ReserveSpaceForAssistiveLabels="False"
+                                           Padding="0,-2,0,0"
+                                           OutlineCornerRadius="8"
+                                           IsHintAlwaysFloated="True"
+                                           WidthRequest="360"
+                                           HeightRequest="60">
+                <editors:SfAutocomplete  x:Name="autocomplete"
+                                     VerticalOptions="Start" 
+                                     NoResultsFoundText=""
+                                     DropDownBackground="WhiteSmoke"
+                                     DropDownStroke="Black"
+                                     DropDownItemHeight="54"
+                                     PlaceholderColor="#283618"
+                                     ShowBorder="False"
+                                     ClearButtonIconColor="#283618"
+                                     TextSearchMode="Contains"
+                                     Placeholder="Search by Customer Name/Designation/Country"
+                                     DisplayMemberPath="ContactName"
+                                     ItemsSource="{Binding CustomerDetails}">
+                <editors:SfAutocomplete.FilterBehavior>
+                    <filter:AutocompleteCustomFilter/>
+                </editors:SfAutocomplete.FilterBehavior>
+                <editors:SfAutocomplete.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10" RowDefinitions="Auto,Auto">
+                            <HorizontalStackLayout Grid.Row="0"
+                                         Spacing="2">
+                                <Label 
+                                        Text="{Binding  ContactName}" 
+                                        FontAttributes="Bold"
+                                        VerticalOptions="Center"
+                                        FontSize="16" 
+                                        TextColor="Black"/>
+                                <Label Text=" - " 
+                                       VerticalOptions="Center"
+                                       FontSize="12"/>
+                                <Label  VerticalOptions="Center"
+                                         Text="{Binding ContactTitle}" 
+                                         FontAttributes="Bold"
+                                         FontSize="12" 
+                                         TextColor="Black"/>
+                                <Label Text="&#xe78c;"
+                                       VerticalOptions="Center"
+                                       FontSize="14"
+                                       Padding="4,0"
+                                       TextColor="#50D072"
+                                       FontFamily="MauiMaterialAssets"/>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout Grid.Row="1"
+                                            Spacing="2">
+                                <Label Text="&#xe71c;"
+                                       VerticalOptions="Center"
+                                       FontSize="14"
+                                       Padding="4,0"
+                                       TextColor="Green"
+                                       FontFamily="MauiMaterialAssets"/>
+                                <Label 
+                                    Text="{Binding City}" 
+                                    FontSize="12"
+                                    VerticalOptions="Center"/>
+                                <Label Text=", " 
+                                       VerticalOptions="Center"
+                                       FontSize="12"/>
+                                <Label VerticalOptions="Center"
+                                        Text="{Binding Country}" 
+                                        FontSize="12" 
+                                        TextColor="Black"/>
+                            </HorizontalStackLayout>
+                        </Grid>
+                    </DataTemplate>
+                </editors:SfAutocomplete.ItemTemplate>
+            </editors:SfAutocomplete>
+          </inputlayout:SfTextInputLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
