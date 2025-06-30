@@ -202,6 +202,7 @@ public class AutocompleteCustomFilter : IAutocompleteFilterBehavior
     } 
  ```
 Output:
+
 ![image.png](https://support.syncfusion.com/kb/agent/attachment/article/20441/inline?token=eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQyMTUzIiwib3JnaWQiOiIzIiwiaXNzIjoic3VwcG9ydC5zeW5jZnVzaW9uLmNvbSJ9.b_YAZtjQfJiZIWCUdp8V-5GNBzAZb2wLe3D7n4C14J4)
  
  ![Android](https://support.syncfusion.com/kb/agent/attachment/article/20441/inline?token=eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQyMTU2Iiwib3JnaWQiOiIzIiwiaXNzIjoic3VwcG9ydC5zeW5jZnVzaW9uLmNvbSJ9.Wb6-bJsYhy_Dj6Vv_Sa384QZXqRhqN1Pj7lJ6cL9v4g)
